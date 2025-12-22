@@ -13,16 +13,21 @@ enum PokemonAPI {
         return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(id).png"
     }
     
-    case list
-    case detail(id: Int)
+    case pokelist
+    case pokedetail(id: Int)
     
     var path: String {
         switch self {
-        case .list:
+        case .pokelist:
             return "\(Self.baseURLPath)/pokemon"
             
-        case .detail(id: let id):
+        case .pokedetail(id: let id):
             return "\(Self.baseURLPath)/pokemon/\(id)"
         }
+    }
+    
+    func url() throws -> URL {
+        guard let url = URL(string: path) else { throw APIError.invalidURL }
+        return url
     }
 }

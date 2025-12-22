@@ -1,5 +1,5 @@
 //
-//  NetworkError.swift
+//  APIError.swift
 //  Pokebook
 //
 //  Created by MD Sahil AK on 21/12/25.
@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum NetworkError: Error {
+enum APIError: Error {
     case invalidURL
 }

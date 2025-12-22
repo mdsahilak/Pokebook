@@ -13,26 +13,24 @@ protocol PokemonService {
     func fetchPokemonInformation(for id: Int) async throws -> PokemonInformation
 }
 
-// MARK: Live Implementation
-@Observable
+// MARK: - Live Implementation -
 final class LivePokemonService: PokemonService {
-    let router: NetworkRouter = NetworkRouter()
+    let router: APIRouter = APIRouter()
     
     func fetchPokemonList(url: URL?) async throws -> PokemonList {
-        guard let url = URL(string: PokemonAPI.list.path) else { throw NetworkError.invalidURL }
+        guard let url else { throw APIError.invalidURL }
         
         return try await router.data(from: url, decoding: PokemonList.self)
     }
     
     func fetchPokemonInformation(for id: Int) async throws -> PokemonInformation {
-        guard let url = URL(string: PokemonAPI.detail(id: id).path) else { throw NetworkError.invalidURL }
+        guard let url = URL(string: PokemonAPI.pokedetail(id: id).path) else { throw APIError.invalidURL }
         
         return try await router.data(from: url, decoding: PokemonInformation.self)
     }
 }
 
-// MARK: Mock Implementation
-@Observable
+// MARK: - Mock Implementation -
 final class MockPokemonService: PokemonService {
     func fetchPokemonList(url: URL?) async throws -> PokemonList {
         return PokemonList(count: 1, next: nil, previous: nil, results: [.mock])
