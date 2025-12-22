@@ -8,7 +8,7 @@
 import Foundation
 
 enum PokemonAPI {
-    static let baseURLPath: String = "https://pokeapi.co/api/v2/pokemon"
+    static let baseURLPath: String = "https://pokeapi.co/api/v2"
     static func imageURLPath(for id: Int) -> String {
         return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(id).png"
     }

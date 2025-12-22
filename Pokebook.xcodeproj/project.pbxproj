@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8CA2B98F2EF974AD00617F75 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA2B98E2EF974AD00617F75 /* NukeUI */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		8CA2B8C22EF84C8800617F75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CA2B98F2EF974AD00617F75 /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = Pokebook;
 			packageProductDependencies = (
+				8CA2B98E2EF974AD00617F75 /* NukeUI */,
 			);
 			productName = Pokebook;
 			productReference = 8CA2B8B42EF84C8600617F75 /* Pokebook.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = 8CA2B8AB2EF84C8600617F75;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8CA2B98D2EF974AD00617F75 /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8CA2B8B52EF84C8600617F75 /* Products */;
 			projectDirPath = "";
@@ -578,6 +587,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8CA2B98D2EF974AD00617F75 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8CA2B98E2EF974AD00617F75 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CA2B98D2EF974AD00617F75 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8CA2B8AC2EF84C8600617F75 /* Project object */;
 }

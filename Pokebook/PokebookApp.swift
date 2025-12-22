@@ -11,7 +11,7 @@ import SwiftUI
 struct PokebookApp: App {
     var body: some Scene {
         WindowGroup {
-            Text("Pokebook")
+            PokeListView(vm: PokeListViewModel(service: LivePokemonService()))
         }
     }
 }

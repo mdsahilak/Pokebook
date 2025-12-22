@@ -40,7 +40,7 @@ final class PokeListViewModel: ObservableObject {
         }
     }
     
-    init(service: PokemonService, pokemons: [PokemonLink]? = nil, selectedPokemon: PokemonLink? = nil, isSearching: Bool, searchText: String, showPaginationLoader: Bool, nextPagePath: String? = nil) {
+    init(service: PokemonService, pokemons: [PokemonLink]? = nil, selectedPokemon: PokemonLink? = nil, isSearching: Bool = false, searchText: String = "", showPaginationLoader: Bool = false, nextPagePath: String? = nil) {
         self.service = service
         self.pokemons = pokemons
         self.selectedPokemon = selectedPokemon
@@ -63,7 +63,7 @@ extension PokeListViewModel {
             nextPagePath = data.next
         } catch {
             pokemons = []
-            print(error)
+            print(error as NSError)
         }
     }
     
