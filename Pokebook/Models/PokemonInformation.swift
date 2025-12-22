@@ -19,9 +19,7 @@ struct PokemonInformation: Codable, Identifiable {
     
     var weight: Int
     
-    var officialSpriteURL: URL? {
-        return URL(string: PokemonAPI.imageURLPath(for: id))
-    }
+    var imageURL: URL? { URL(string: PokemonAPI.imageURLPath(for: id)) }
     
     enum CodingKeys: String, CodingKey {
         case height

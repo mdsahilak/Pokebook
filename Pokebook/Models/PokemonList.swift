@@ -1,5 +1,5 @@
 //
-//  PokeAPIResponse.swift
+//  PokemonList.swift
 //  Pokedex
 //
 //  Created by Sahil Ak on 05/07/2024.
