@@ -109,7 +109,7 @@ struct PokemonDetailView: View {
     /// Interactive Indicator for the image carousel
     private var indicatorView: some View {
         HStack {
-            ForEach(0..<3, id: \.self) { val in
+            ForEach(0..<2, id: \.self) { val in
                 let current = vm.currentImageIndex ?? 0
                 
                 Button(action: {
@@ -119,7 +119,7 @@ struct PokemonDetailView: View {
                 }, label: {
                     Image(systemName: "circle.fill")
                         .font(.system(size: 8))
-                        .foregroundStyle(current == val ? Color(.darkGray) : Color(.lightGray))
+                        .foregroundStyle(current == val ? Color(.accent) : Color(uiColor: .lightGray))
                 })
             }
         }
