@@ -12,11 +12,7 @@ final class APIRouter {
     func data<T: Decodable>(from url: URL?, decoding type: T.Type) async throws -> T {
         guard let url else { throw APIError.invalidURL }
         
-        let (data, response) = try await URLSession.shared.data(from: url)
-        
-        print(url)
-        print(response)
-        print(String(data: data, encoding: .utf8))
+        let (data, _) = try await URLSession.shared.data(from: url)
         
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase

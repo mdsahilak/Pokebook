@@ -15,17 +15,19 @@ struct PokemonImageView: View {
     
     var body: some View {
         LazyImage(url: url) { state in
-            if let image = state.image {
-                image
-                    .resizable()
-                    .aspectRatio(1, contentMode: contentMode)
-            } else if state.error != nil {
-                Image(systemName: "exclamationmark.circle")
-                    .aspectRatio(1, contentMode: .fit)
-                    .font(.system(size: 33))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            } else {
+            if state.isLoading {
                 CircularLoaderView()
+            } else {
+                if let image = state.image {
+                    image
+                        .resizable()
+                        .aspectRatio(1, contentMode: contentMode)
+                } else {
+                    Image(systemName: "exclamationmark.circle")
+                        .aspectRatio(1, contentMode: .fit)
+                        .font(.system(size: 33))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
             }
         }
     }

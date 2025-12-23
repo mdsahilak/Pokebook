@@ -9,9 +9,6 @@ import Foundation
 
 /// The A pokemon object representing very basic information about a pokemon.
 struct PokemonLink: Codable, Hashable, Identifiable {
-    /// Mock object for testing in previews
-    static let mock: PokemonLink = .init(name: "squirtle", url: "\(PokemonAPI.baseURLPath)/7/")
-    
     var id: Int { Int((url as NSString).lastPathComponent) ?? 0 }
     
     var name: String
@@ -20,4 +17,12 @@ struct PokemonLink: Codable, Hashable, Identifiable {
     var url: String
     
     var imageURL: URL? { URL(string: PokemonAPI.imageURLPath(for: id)) }
+}
+
+
+extension PokemonLink {
+    /// Mock object for testing in previews & unit tests
+    static func mock() -> Self {
+        Self(name: "squirtle", url: "\(PokemonAPI.baseURLPath)/7/")
+    }
 }

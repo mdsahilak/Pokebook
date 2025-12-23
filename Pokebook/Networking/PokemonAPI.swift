@@ -8,13 +8,18 @@
 import Foundation
 
 enum PokemonAPI {
-    static let baseURLPath: String = "https://pokeapi.co/api/v2"
-    static func imageURLPath(for id: Int) -> String {
-        return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(id).png"
-    }
-    
     case pokelist
     case pokedetail(id: Int)
+    
+    static let baseURLPath: String = "https://pokeapi.co/api/v2"
+    
+    static func imageURLPath(for id: Int) -> String {
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(id).png"
+    }
+    
+    static func altImageURLPath(for id: Int) -> String {
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/\(id).png"
+    }
     
     var path: String {
         switch self {

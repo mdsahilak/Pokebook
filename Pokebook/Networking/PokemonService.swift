@@ -33,7 +33,7 @@ final class LivePokemonService: PokemonService {
 // MARK: - Mock Implementation -
 final class MockPokemonService: PokemonService {
     func fetchPokemonList(url: URL?) async throws -> PokemonList {
-        return PokemonList(count: 1, next: nil, previous: nil, results: [.mock])
+        return PokemonList(count: 1, next: nil, previous: nil, results: [.mock()])
     }
     
     func fetchPokemonInformation(for id: Int) async throws -> PokemonInformation {
