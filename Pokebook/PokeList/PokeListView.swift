@@ -10,7 +10,7 @@ import SwiftUI
 /// View for the initial home screen
 struct PokeListView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    @ObservedObject var vm: PokeListViewModel
+    @State var vm: PokeListViewModel
     
     var body: some View {
         NavigationStack {

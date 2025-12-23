@@ -10,7 +10,7 @@ import SwiftUI
 /// View to display detailed information about a pokemon
 struct PokemonDetailView: View {
     @Environment(\.dismiss) var dismiss
-    @StateObject var vm: PokemonDetailViewModel
+    @State var vm: PokemonDetailViewModel
     
     var body: some View {
         NavigationStack {

@@ -9,15 +9,16 @@ import Foundation
 import Combine
 
 @MainActor
-final class PokemonDetailViewModel: ObservableObject {
+@Observable
+final class PokemonDetailViewModel {
     let pokemonLink: PokemonLink
     let service: PokemonService
     
     /// The detailed information related to the currently selected pokemon
-    @Published var pokemonInfo: PokemonInformation? = nil
+    var pokemonInfo: PokemonInformation? = nil
     
     /// Value indicating the current image shown in the carousel
-    @Published var currentImageIndex: Int? = nil
+    var currentImageIndex: Int? = nil
     
     init(pokemonLink: PokemonLink, service: PokemonService) {
         self.pokemonLink = pokemonLink

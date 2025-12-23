@@ -9,21 +9,22 @@ import Foundation
 import Combine
 
 @MainActor
-final class PokeListViewModel: ObservableObject {
+@Observable
+final class PokeListViewModel {
     let service: PokemonService
     
     /// List of all the fetched pokemons
-    @Published var pokemons: [PokemonLink]? = nil
+    var pokemons: [PokemonLink]? = nil
     
     /// The pokemon that was selected to be shown in the detail screen.
-    @Published var selectedPokemon: PokemonLink? = nil
+    var selectedPokemon: PokemonLink? = nil
     
     // Search Bar
-    @Published var isSearching: Bool = false
-    @Published var searchText: String = ""
+    var isSearching: Bool = false
+    var searchText: String = ""
     
     /// State to show / hide the loader while fetching the next page of pokemons
-    @Published var showPaginationLoader: Bool = false
+    var showPaginationLoader: Bool = false
     
     /// The url  to fetch the next page of pokemons
     private var nextPagePath: String? = nil
