@@ -50,3 +50,15 @@ struct PokemonInformation: Codable, Identifiable {
     }
     
 }
+
+extension PokemonInformation {
+    static func mock() -> Self {
+        .init(
+            height: 10,
+            id: 7,
+            name: "squirtle",
+            statInfos: [],
+            weight: 69
+        )
+    }
+}

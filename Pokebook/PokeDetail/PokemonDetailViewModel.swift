@@ -17,9 +17,6 @@ final class PokemonDetailViewModel {
     /// The detailed information related to the currently selected pokemon
     var pokemonInfo: PokemonInformation? = nil
     
-    /// Value indicating the current image shown in the carousel
-    var currentImageIndex: Int? = nil
-    
     init(pokemonLink: PokemonLink, service: PokemonService) {
         self.pokemonLink = pokemonLink
         self.service = service

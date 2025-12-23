@@ -23,6 +23,9 @@ struct PokemonLink: Codable, Hashable, Identifiable {
 extension PokemonLink {
     /// Mock object for testing in previews & unit tests
     static func mock() -> Self {
-        Self(name: "squirtle", url: "\(PokemonAPI.baseURLPath)/7/")
+        .init(
+            name: "squirtle",
+            url: "\(PokemonAPI.baseURLPath)/7/"
+        )
     }
 }
